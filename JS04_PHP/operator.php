@@ -71,4 +71,21 @@ $hasilTidakIdentik = $a !== $b;
 echo "<br>";
 echo "Hasil Identik ($a === $b) : " . ($hasilIdentik ? 'true' : 'false') . "<br>";
 echo "Hasil Tidak Identik ($a !== $b) : " . ($hasilTidakIdentik ? 'true' : 'false') . "<br>";
+
+// Soal Cerita
+
+// Jumlah total kursi dan kursi yang telah ditempati
+$totalKursi = 45;
+$kursiDitempati = 28;
+
+// Menghitung kursi yang kosong
+$kursiKosong = $totalKursi - $kursiDitempati;
+
+// Menghitung persentase kursi kosong
+$persentaseKursiKosong = ($kursiKosong / $totalKursi) * 100;
+
+// Menampilkan hasil
+echo "<br>";
+echo "Jumlah kursi yang kosong: {$kursiKosong} <br>";
+echo "Persentase kursi yang masih kosong: " . number_format($persentaseKursiKosong, 2) . "% <br>";
 ?>
