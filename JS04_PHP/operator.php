@@ -3,7 +3,7 @@ $a = 10;
 $b = 5;
 
 $hasilTambah = $a + $b;
-$hasilKurang = $a = $b;
+$hasilKurang = $a - $b;
 $hasilKali = $a * $b;
 $hasilBagi = $a / $b;
 $sisaBagi = $a % $b;
@@ -22,3 +22,33 @@ $hasilLebihkecil = $a < $b;
 $hasilLebihBesar = $a > $b;
 $hasilLebihKecilSama = $a <= $b;
 $hasilLebihBesarSama = $a >= $b;
+
+echo "<br>";
+
+echo "Hasil Perbandingan $a == $b : " . ($hasilSama ? 'true' : 'false') . "<br>";
+echo "Hasil Perbandingan $a != $b : " . ($hasilTidakSama ? 'true' : 'false') . "<br>";
+echo "Hasil Perbandingan $a < $b : " . ($hasilLebihkecil ? 'true' : 'false') . "<br>";
+echo "Hasil Perbandingan $a > $b : " . ($hasilLebihBesar ? 'true' : 'false') . "<br>";
+echo "Hasil Perbandingan $a <= $b : " . ($hasilLebihKecilSama ? 'true' : 'false') . "<br>";
+echo "Hasil Perbandingan $a >= $b : " . ($hasilLebihBesarSama ? 'true' : 'false') . "<br>";
+
+$hasilAnd = $a && $b;
+$hasilOr = $a || $b;
+$hasilNotA = !$a;
+$hasilNotB = !$b;
+
+echo "<br>";
+echo "Hasil Logika AND ($a && $b) = " . ($hasilAnd ? 'true' : 'false') . "<br>";
+echo "Hasil Logika OR ($a || $b) = " . ($hasilOr ? 'true' : 'false') . "<br>";
+echo "Hasil Logika NOTA (!$a) = " . ($hasilNotA ? 'true' : 'false') . "<br>";
+echo "Hasil Logika NOTB (!$b) = " . ($hasilNotB ? 'true' : 'false') . "<br>";
+
+$a += $b;
+$a -= $b;
+$a *= $b;
+$a /= $b;
+$a %= $b;
+
+$hasilIdentik = $a === $b;
+$hasilTidakIdentik = $a !== $b;
+?>
