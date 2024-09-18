@@ -87,7 +87,7 @@ echo "Diskon: Rp " . number_format($diskon, 0, ',', '.') . "<br>";
 echo "Harga setelah diskon: Rp " . number_format($hargaSetelahDiskon, 0, ',', '.') . "<br>";
 
 // Soal Cerita no 25
-$poin = readline("Masukkan total poin pemain: ");
+$poin = 550;
 
 echo "Total skor pemain adalah: $poin\n";
 
