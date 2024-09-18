@@ -91,10 +91,8 @@ $poin = 550;
 
 echo "Total skor pemain adalah: $poin\n";
 
-if ($poin > 500) {
-    echo "<br>Apakah pemain mendapatkan hadiah tambahan? YA\n";
-} else {
-    echo "<br>Apakah pemain mendapatkan hadiah tambahan? TIDAK\n";
-}
+$hadiah = ($poin > 500) ? "YA" : "TIDAK";
+
+echo "<br>Apakah pemain mendapatkan hadiah tambahan? $hadiah\n";
 
 ?>
