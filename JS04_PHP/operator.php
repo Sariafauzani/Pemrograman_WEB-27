@@ -49,6 +49,26 @@ $a *= $b;
 $a /= $b;
 $a %= $b;
 
+echo "<br>";
+$a += $b; 
+echo "Setelah $a += $b : $a = {$a} <br>";
+
+$a -= $b; 
+echo "Setelah $a -= $b : $a = {$a} <br>";
+
+$a *= $b;
+echo "Setelah $a *= $b : $a = {$a} <br>";
+
+$a /= $b; 
+echo "Setelah $a /= $b : $a = {$a} <br>";
+
+$a %= $b; 
+echo "Setelah $a %= $b : $a = {$a} <br>";
+
 $hasilIdentik = $a === $b;
 $hasilTidakIdentik = $a !== $b;
+
+echo "<br>";
+echo "Hasil Identik ($a === $b) : " . ($hasilIdentik ? 'true' : 'false') . "<br>";
+echo "Hasil Tidak Identik ($a !== $b) : " . ($hasilTidakIdentik ? 'true' : 'false') . "<br>";
 ?>
