@@ -19,6 +19,7 @@ $nilaiBahasaIndonesia = 9.3;
 
 $rataRata = ($nilaiMatematika + $nilaiIPA + $nilaiBahasaIndonesia) / 3;
 
+echo "<br>";
 echo "Matematika: {$nilaiMatematika} <br>";
 echo "IPA: {$nilaiIPA} <br>";
 echo "Bahasa Indonesia: {$nilaiBahasaIndonesia} <br>";
@@ -39,6 +40,7 @@ $namaBelakang = 'Jakaria';
 $namaLengkap = "{$namaDepan} {$namaBelakang}";
 $namaLengkap2 = $namaDepan . ' ' . $namaBelakang;
 
+echo "<br>";
 echo "Nama Depan: {$namaDepan} <br>";
 echo 'Nama Belakang: ' . $namaBelakang . '<br>';
 
