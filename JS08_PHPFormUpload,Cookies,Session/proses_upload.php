@@ -25,4 +25,3 @@ if($_FILES['files']['name'][0]) {
 } else {
     echo "Tidak ada file yang diunggah.";
 }
-?>
