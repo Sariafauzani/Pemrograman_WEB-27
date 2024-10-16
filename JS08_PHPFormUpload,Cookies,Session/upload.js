@@ -14,7 +14,7 @@ $(document).ready(function(){
             success: function(response){
                 $('#status').html(response);
             },
-            eror: function(){
+            error: function(){
                 $('#status').html('Terjadi kesalahan saar mengunggah file.');
             }
         });
