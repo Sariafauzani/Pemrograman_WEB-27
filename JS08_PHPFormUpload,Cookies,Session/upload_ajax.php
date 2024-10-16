@@ -23,8 +23,9 @@ if (isset($_FILES['files'])) {
 
         if (empty($errors)) {
             if (move_uploaded_file($file_tmp, $targetDirectory . $file_name)) {
-                echo "<img src='uploads/{$file_name}' width='200' style='height: auto' alt='Thumbnail'><br>";
                 echo "File $file_name berhasil diunggah.";
+                echo "<img src='uploads/{$file_name}' width='200' style='height: auto' alt='Thumbnail'><br>";
+
             } else {
                 $errors[] = "Gagal mengunggah file $file_name.";
             }
