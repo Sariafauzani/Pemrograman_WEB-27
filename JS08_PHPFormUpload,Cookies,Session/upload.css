@@ -1,4 +1,4 @@
-.upload-form-container{
+.upload-form-container {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -40,11 +40,14 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
     opacity: 0.5;
+    /* Opacity to make it appear faded */
 }
 
-.pointer-button {
+.upload-button:disabled {
     background: #ccc;
+    /* Change color when disabled */
     cursor: not-allowed;
+    /* Change cursor style when disabled */
 }
 
 .upload-status {
