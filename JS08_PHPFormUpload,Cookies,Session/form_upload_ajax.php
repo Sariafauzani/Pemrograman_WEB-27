@@ -9,9 +9,9 @@
 <body>
     <div class="upload-form-container">
         <h2>Unggah File Dokumen</h2>
-        <form id="upload-form" action="upload.php" method="POST" enctype="multipart/form-data">
+        <form id="upload-form" action="upload.php" method="post" enctype="multipart/form-data">
             <div class="file-input-container">
-                <input type="file" name="file" id="file" class="file-input"> 
+                <input type="file" name="file[]" id="file" class="file-input"> 
                 <label for="file" class="file-label">Pilih File</label>
             </div>
             <button type="submit" name="submit" class="upload-button" id="upload-button" disabled>Unggah</button>
