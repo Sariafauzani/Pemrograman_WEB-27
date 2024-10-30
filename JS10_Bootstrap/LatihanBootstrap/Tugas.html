@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pengenalan Bootstrap</title> <!-- Judul Halaman -->
+    <!-- Menyisipkan Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <!-- Menyisipkan Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tentang</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Gambar 
+    <div class="container my-4">
+        <img src="tower.jpeg" class="img-fluid" alt="Gambar Placeholder">
+    </div>-->
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+        <h1 class="display-4">Selamat Datang di Halaman Web!</h1>
+        <p class="lead">Ini adalah contoh halaman web yang menggunakan Bootstrap.</p>
+        <hr class="my-4">
+        <p>Bootstrap adalah framework CSS yang memudahkan pengembangan web responsif.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Pelajari Lebih Lanjut</a>
+    </div>
+
+    <!-- Card -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="tower3.JPEG" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Foto 1</h5>
+                        <p class="card-text">Lee Jae sedang menunggu kereta yang akan mengatarkan nya pulang.</p>
+                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="tower2.JPEG" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Foto 2</h5>
+                        <p class="card-text">Tidak lama kereta nya datang, namun Lee Jae kesusahan karena barang bawaan nya sangat banyak.</p>
+                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="tower4.JPEG" class="card-img-top" alt="Card Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Foto 3</h5>
+                        <p class="card-text">Sedangkan, Paman dan bibi nya berada dijalan untuk menjemput Lee Jae.</p>
+                        <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
