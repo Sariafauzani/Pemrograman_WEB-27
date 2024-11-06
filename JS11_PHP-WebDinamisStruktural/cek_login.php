@@ -10,7 +10,7 @@ if (session_start() === PHP_SESSION_NONE)
     $password = antiinjection($koneksi, $_POST['password']);
 
     $query = "SELECT username, level, salt, password as hashed_password FROM user WHERE username = '$username'";
-    $result = mysql_query($koneksi, $query);
+    $result = mysqli_query($koneksi, $query);
     $row = mysqli_fetch_assoc($result);
     mysqli_close($koneksi);
     $salt = $row['salt'];
