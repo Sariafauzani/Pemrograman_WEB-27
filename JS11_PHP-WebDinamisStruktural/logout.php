@@ -2,5 +2,5 @@
 if (session_status() === PHP_SESSION_NONE)
     session_start();
 session_destroy();
-header('loctaion:index.php');
+header('location:index.php');
 ?>
