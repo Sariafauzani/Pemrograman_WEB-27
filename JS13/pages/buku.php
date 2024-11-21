@@ -45,13 +45,6 @@
 </section>
 <div class="modal fade" id="form-data" style="display: none;" aria-hidden="true">
     <form action="action/bukuAction.php?act=save" method="post" id="form-tambah">
-        <!-- Ukuran Modal
-modal-sm : Modal ukuran kecil
-modal-md : Modal ukuran sedang
-modal-lg : Modal ukuran besar
-modal-xl : Modal ukuran sangat besar
-penerapan setelah class modal-dialog seperti di bawah
--->
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
@@ -82,7 +75,7 @@ penerapan setelah class modal-dialog seperti di bawah
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" datadismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </div>
@@ -110,33 +103,12 @@ penerapan setelah class modal-dialog seperti di bawah
                 $('#form-tambah').attr('action', 'action/bukuAction.php?act=update&id=' + id);
                 $('#buku_kode').val(data.buku_kode);
                 $('#buku_nama').val(data.buku_nama);
-                $('#jumlah').val(data.jumlah); // Tambahkan ini
-                $('#deskripsi').val(data.deskripsi); // Tambahkan ini
-                $('#gambar').val(data.gambar); // Tambahkan ini
+                $('#jumlah').val(data.jumlah); 
+                $('#deskripsi').val(data.deskripsi); 
+                $('#gambar').val(data.gambar); 
             }
         });
     }
-    // function tambahData() {
-    //     $('#form-data').modal('show');
-    //     $('#form-tambah').attr('action', 'action/bukuAction.php?act=save');
-    //     $('#buku_kode').val('');
-    //     $('#buku_nama').val('');
-    // }
-
-    // function editData(id) {
-    //     $.ajax({
-    //         url: 'action/bukuAction.php?act=get&id=' + id,
-    //         method: 'post',
-    //         success: function(response) {
-    //             var data = JSON.parse(response);
-    //             $('#form-data').modal('show');
-    //             $('#form-tambah').attr('action',
-    //                 'action/bukuAction.php?act=update&id=' + id);
-    //             $('#buku_kode').val(data.buku_kode);
-    //             $('#buku_nama').val(data.buku_nama);
-    //         }
-    //     });
-    // }
 
     function deleteData(id) {
         if (confirm('Apakah anda yakin?')) {
@@ -210,44 +182,5 @@ penerapan setelah class modal-dialog seperti di bawah
                 });
             }
         });
-        // $('#form-tambah').validate({
-        //     rules: {
-        //         buku_kode: {
-        //             required: true,
-        //             minlength: 3
-        //         },
-        //         buku_nama: {
-        //             required: true,
-        //             minlength: 5
-        //         }
-        //     },
-        //     errorElement: 'span',
-        //     errorPlacement: function(error, element) {
-        //         error.addClass('invalid-feedback');
-        //         element.closest('.form-group').append(error);
-        //     },
-        //     highlight: function(element, errorClass, validClass) {
-        //         $(element).addClass('is-invalid');
-        //     },
-        //     unhighlight: function(element, errorClass, validClass) {
-        //         $(element).removeClass('is-invalid');
-        //     },
-        //     submitHandler: function(form) {
-        //         $.ajax({
-        //             url: $(form).attr('action'),
-        //             method: 'post',
-        //             data: $(form).serialize(),
-        //             success: function(response) {
-        //                 var result = JSON.parse(response);
-        //                 if (result.status) {
-        //                     $('#form-data').modal('hide');
-        //                     tabelData.ajax.reload(); // reload data tabel
-        //                 } else {
-        //                     alert(result.message);
-        //                 }
-        //             }
-        //         });
-        //     }
-        // });
     });
 </script>

@@ -16,16 +16,6 @@ class BukuModel extends Model
         $query->bind_param('ssiss', $data['buku_kode'], $data['buku_nama'], $data['jumlah'], $data['deskripsi'], $data['gambar']);
         $query->execute();
     }
-//     public function insertData($data)
-//     {
-//         // prepare statement untuk query insert
-//         $query = $this->db->prepare("insert into {$this->table} (buku_kode,
-// buku_nama, jumlah, deskripsi, gambar) values(?,?,?,?,?)");
-//         // binding parameter ke query, "s" berarti string, "ss" berarti dua string
-//         $query->bind_param('ss', $data['buku_kode'], $data['buku_nama']);
-//         // eksekusi query untuk menyimpan ke database
-//         $query->execute();
-//     }
     public function getData()
     {
         // query untuk mengambil data dari tabel bank_soal
@@ -48,16 +38,6 @@ class BukuModel extends Model
         $query->bind_param('ssissi', $data['buku_kode'], $data['buku_nama'], $data['jumlah'], $data['deskripsi'], $data['gambar'], $id);
         $query->execute();
     }
-    // public function updateData($id, $data)
-    // {
-    //     // query untuk update data
-    //     $query = $this->db->prepare("update {$this->table} set buku_kode = ?,
-    // buku_nama = ?, jumlah = ?, deskripsi = ?, gambar = ?,  where buku_id = ?");
-    //     // binding parameter ke query
-    //     $query->bind_param('ssi', $data['buku_kode'], $data['buku_nama'], $id);
-    //     // eksekusi query
-    //     $query->execute();
-    // }
 
     public function deleteData($id)
     {
@@ -65,13 +45,4 @@ class BukuModel extends Model
         $query->bind_param('i', $id);
         $query->execute();
     }
-    // public function deleteData($id)
-    // {
-    //     // query untuk delete data
-    //     $query = $this->db->prepare("delete from {$this->table} where kategori_id = ?");
-    //     // binding parameter ke query
-    //     $query->bind_param('i', $id);
-    //     // eksekusi query
-    //     $query->execute();
-    // }
 }

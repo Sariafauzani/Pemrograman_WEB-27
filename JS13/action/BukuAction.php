@@ -28,28 +28,6 @@ if ($act == 'load') {
     header('Content-Type: application/json'); // Set content type to JSON
     echo json_encode($result);
 }
-// if ($act == 'load') {
-//     $buku = new BukuModel();
-//     $data = $buku->getData();
-//     $result = [];
-//     $i = 1;
-//     while ($row = $data->fetch_assoc()) {
-//         $result['data'][] = [
-//             $i,
-//             $row['kategori_buku'],
-//             $row['buku_nama'],
-//             $row['jumlah'],
-//             $row['deskripsi'],
-//             $row['gambar'],
-//             '<button class="btn btn-sm btn-warning"
-// onclick="editData(' . $row['buku_id'] . ')"><i class="fa fa-edit"></i></button>
-// <button class="btn btn-sm btn-danger"
-// onclick="deleteData(' . $row['buku_id'] . ')"><i class="fa fa-trash"></i></button>'
-//         ];
-//         $i++;
-//     }
-//     echo json_encode($result);
-// }
 if ($act == 'get') {
     $id = (isset($_GET['id']) && ctype_digit($_GET['id'])) ? $_GET['id'] : 0;
     $buku = new BukuModel();
