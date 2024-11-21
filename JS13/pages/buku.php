@@ -1,15 +1,8 @@
-<?php
-require_once __DIR__ . '/../lib/Connection.php';
-
-// Ambil data kategori menggunakan fungsi
-$kategori = getKategori();
-?>
-
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Daftar Buku</h1>
+                <h1>Buku</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -20,7 +13,6 @@ $kategori = getKategori();
         </div>
     </div>
 </section>
-
 <!-- Main content -->
 <section class="content">
     <div class="card">
@@ -28,7 +20,7 @@ $kategori = getKategori();
             <h3 class="card-title">Daftar Buku</h3>
             <div class="card-tools">
                 <button type="button" class="btn btn-md btn-primary" onclick="tambahData()">
-                    Tambah Buku
+                    Tambah
                 </button>
             </div>
         </div>
@@ -39,7 +31,6 @@ $kategori = getKategori();
                         <th>No</th>
                         <th>Kode Buku</th>
                         <th>Nama Buku</th>
-                        <th>Kategori</th>
                         <th>Jumlah</th>
                         <th>Deskripsi</th>
                         <th>Gambar</th>
@@ -52,10 +43,15 @@ $kategori = getKategori();
         </div>
     </div>
 </section>
-
-<!-- Modal Form -->
 <div class="modal fade" id="form-data" style="display: none;" aria-hidden="true">
-    <form action="action/bukuAction.php?act=save" method="post" id="form-tambah" enctype="multipart/form-data">
+    <form action="action/bukuAction.php?act=save" method="post" id="form-tambah">
+        <!-- Ukuran Modal
+modal-sm : Modal ukuran kecil
+modal-md : Modal ukuran sedang
+modal-lg : Modal ukuran besar
+modal-xl : Modal ukuran sangat besar
+penerapan setelah class modal-dialog seperti di bawah
+-->
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
@@ -64,25 +60,13 @@ $kategori = getKategori();
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Kode Buku</label>
-                        <input type="text" class="form-control" name="buku_kode" id="buku_kode">
+                        <input type="text" class="form-control" name="buku_kode"
+                            id="buku_kode">
                     </div>
                     <div class="form-group">
                         <label>Nama Buku</label>
-                        <input type="text" class="form-control" name="buku_nama" id="buku_nama">
-                    </div>
-                    <div class="form-group">
-                        <label>Kategori</label>
-                        <select id="kategori_id" name="kategori_id" class="form-control">
-                            <?php if (!empty($kategori)): ?>
-                                <?php foreach ($kategori as $k): ?>
-                                    <option value="<?= htmlspecialchars($k['kategori_id']); ?>">
-                                        <?= htmlspecialchars($k['kategori_nama']); ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            <?php else: ?>
-                                <option value="">Kategori Tidak Ditemukan</option>
-                            <?php endif; ?>
-                        </select>
+                        <input type="text" class="form-control" name="buku_nama"
+                            id="buku_nama">
                     </div>
                     <div class="form-group">
                         <label>Jumlah</label>
@@ -93,29 +77,27 @@ $kategori = getKategori();
                         <textarea class="form-control" name="deskripsi" id="deskripsi"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Gambar (URL)</label>
-                        <input type="url" class="form-control" name="gambar" id="gambar" placeholder="Masukkan URL gambar">
+                        <label>Gambar</label>
+                        <input type="text" class="form-control" name="gambar" id="gambar">
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-default" datadismiss="modal">Batal</button>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
             </div>
         </div>
     </form>
 </div>
-
 <script>
     function tambahData() {
-        $('#form-data').modal('show');
-        $('#form-tambah').attr('action', 'action/bukuAction.php?act=save');
-        $('#buku_kode').val('');
-        $('#buku_nama').val('');
-        $('#kategori_id').val(''); // Sesuai ID dari select
-        $('#jumlah').val('');
-        $('#deskripsi').val('');
-        $('#gambar').val('');
+    $('#form-data').modal('show');
+    $('#form-tambah').attr('action', 'action/bukuAction.php?act=save');
+    $('#buku_kode').val('');
+    $('#buku_nama').val('');
+    $('#jumlah').val('');
+    $('#deskripsi').val('');
+    $('#gambar').val('');
     }
 
     function editData(id) {
@@ -128,14 +110,33 @@ $kategori = getKategori();
                 $('#form-tambah').attr('action', 'action/bukuAction.php?act=update&id=' + id);
                 $('#buku_kode').val(data.buku_kode);
                 $('#buku_nama').val(data.buku_nama);
-                $('#kategori_id').val(data.kategori_id).trigger('change');
-                $('#jumlah').val(data.jumlah);
-                $('#deskripsi').val(data.deskripsi || ''); // Pastikan deskripsi tidak kosong
-                $('#gambar').val(data.gambar);
+                $('#jumlah').val(data.jumlah); // Tambahkan ini
+                $('#deskripsi').val(data.deskripsi); // Tambahkan ini
+                $('#gambar').val(data.gambar); // Tambahkan ini
             }
         });
     }
+    // function tambahData() {
+    //     $('#form-data').modal('show');
+    //     $('#form-tambah').attr('action', 'action/bukuAction.php?act=save');
+    //     $('#buku_kode').val('');
+    //     $('#buku_nama').val('');
+    // }
 
+    // function editData(id) {
+    //     $.ajax({
+    //         url: 'action/bukuAction.php?act=get&id=' + id,
+    //         method: 'post',
+    //         success: function(response) {
+    //             var data = JSON.parse(response);
+    //             $('#form-data').modal('show');
+    //             $('#form-tambah').attr('action',
+    //                 'action/bukuAction.php?act=update&id=' + id);
+    //             $('#buku_kode').val(data.buku_kode);
+    //             $('#buku_nama').val(data.buku_nama);
+    //         }
+    //     });
+    // }
 
     function deleteData(id) {
         if (confirm('Apakah anda yakin?')) {
@@ -153,66 +154,55 @@ $kategori = getKategori();
             });
         }
     }
-
     var tabelData;
     $(document).ready(function() {
         tabelData = $('#table-data').DataTable({
             ajax: 'action/bukuAction.php?act=load',
         });
         $('#form-tambah').validate({
-            rules: {
-                buku_kode: {
-                    required: true
-                },
-                buku_nama: {
-                    required: true
-                },
-                kategori_id: {
-                    required: true
-                },
-                jumlah: {
-                    required: true,
-                    number: true,
-                    min: 1
-                },
-                deskripsi: {
-                    required: true
-                },
-                gambar: {
-                    url: true
-                },
+        rules: {
+            buku_kode: {
+                required: true,
+                minlength: 3
             },
-            messages: {
-                kategori_id: {
-                    required: "Kategori harus dipilih."
-                },
-                deskripsi: {
-                    required: "Deskripsi tidak boleh kosong."
-                },
+            buku_nama: {
+                required: true,
+                minlength: 5
             },
+            jumlah: {
+                required: true,
+                digits: true
+            },
+            deskripsi: {
+                required : true,
+                minlength: 10
+            },
+            gambar: {
+                required: true,
+                url: true // Jika gambar adalah URL
+            }
+        },
             errorElement: 'span',
             errorPlacement: function(error, element) {
                 error.addClass('invalid-feedback');
                 element.closest('.form-group').append(error);
             },
-            highlight: function(element) {
+            highlight: function(element, errorClass, validClass) {
                 $(element).addClass('is-invalid');
             },
-            unhighlight: function(element) {
+            unhighlight: function(element, errorClass, validClass) {
                 $(element).removeClass('is-invalid');
             },
             submitHandler: function(form) {
                 $.ajax({
                     url: $(form).attr('action'),
                     method: 'post',
-                    data: new FormData(form),
-                    processData: false,
-                    contentType: false,
+                    data: $(form).serialize(),
                     success: function(response) {
                         var result = JSON.parse(response);
                         if (result.status) {
                             $('#form-data').modal('hide');
-                            tabelData.ajax.reload();
+                            tabelData.ajax.reload(); // reload data tabel
                         } else {
                             alert(result.message);
                         }
@@ -220,5 +210,44 @@ $kategori = getKategori();
                 });
             }
         });
+        // $('#form-tambah').validate({
+        //     rules: {
+        //         buku_kode: {
+        //             required: true,
+        //             minlength: 3
+        //         },
+        //         buku_nama: {
+        //             required: true,
+        //             minlength: 5
+        //         }
+        //     },
+        //     errorElement: 'span',
+        //     errorPlacement: function(error, element) {
+        //         error.addClass('invalid-feedback');
+        //         element.closest('.form-group').append(error);
+        //     },
+        //     highlight: function(element, errorClass, validClass) {
+        //         $(element).addClass('is-invalid');
+        //     },
+        //     unhighlight: function(element, errorClass, validClass) {
+        //         $(element).removeClass('is-invalid');
+        //     },
+        //     submitHandler: function(form) {
+        //         $.ajax({
+        //             url: $(form).attr('action'),
+        //             method: 'post',
+        //             data: $(form).serialize(),
+        //             success: function(response) {
+        //                 var result = JSON.parse(response);
+        //                 if (result.status) {
+        //                     $('#form-data').modal('hide');
+        //                     tabelData.ajax.reload(); // reload data tabel
+        //                 } else {
+        //                     alert(result.message);
+        //                 }
+        //             }
+        //         });
+        //     }
+        // });
     });
 </script>
