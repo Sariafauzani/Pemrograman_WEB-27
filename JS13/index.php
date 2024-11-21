@@ -18,8 +18,14 @@ include('lib/Session.php');
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="adminlte/plugins/datatablesbs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="adminlte/plugins/datatablesresponsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="adminlte/plugins/datatablesbuttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
+  <!-- jQuery -->
+  <script src="adminlte/plugins/jquery/jquery.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -47,11 +53,21 @@ include('lib/Session.php');
     <?php
     $page = isset($_GET['page']) ? $_GET['page'] : 'dashboard';
     switch(strtolower($page)){
-      case 'dashboard' : include('pages/dashboard.php'); break;
-      case 'buku'      : include('pages/buku.php'); break;
-      case 'kategori'  : include('pages/kategori.php'); break;
-      case 'user'      : include('pages/user.php'); break;
-      default          : include('pages/404.php'); break;
+      case 'dashboard' : 
+        include('pages/dashboard.php'); 
+        break;
+      case 'buku'      : 
+        include('pages/buku.php'); 
+        break;
+      case 'kategori'  : 
+        include('pages/kategori.php'); 
+        break;
+      case 'user'      : 
+        include('pages/user.php'); 
+        break;
+      default          : 
+      include('pages/404.php'); 
+      break;
     } 
   ?>
     <!-- /.content -->
@@ -68,10 +84,25 @@ include('lib/Session.php');
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery -->
-<script src="adminlte/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery Validation -->
+<script src="adminlte/plugins/jquery-validation/jquery.validate.min.js"></script>
+<script src="adminlte/plugins/jquery-validation/additional-methods.min.js"></script>
+<script src="adminlte/plugins/jquery-validation/localization/messages_id.min.js"></script>
+<!-- DataTables & Plugins -->
+<script src="adminlte/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="adminlte/plugins/datatablesresponsive/js/dataTables.responsive.min.js"></script>
+<script src="adminlte/plugins/datatablesresponsive/js/responsive.bootstrap4.min.js"></script>
+<script src="adminlte/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="adminlte/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="adminlte/plugins/jszip/jszip.min.js"></script>
+<script src="adminlte/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="adminlte/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="adminlte/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="adminlte/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- AdminLTE App -->
 <script src="adminlte/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
