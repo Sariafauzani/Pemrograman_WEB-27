@@ -25,9 +25,7 @@ if ($use_driver == 'mysql') {
         if (!$db) {
             $msg = sqlsrv_errors();
             die($msg[0]['message']);
-        } else {
-            echo "masuk";
-        }
+        } 
     } catch (Exception $e) {
         die($e->getMessage());
     }
